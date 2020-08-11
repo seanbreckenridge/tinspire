@@ -1,0 +1,6 @@
+Define LibPub listtostring(n)=
+Func
+©Converts lists to strings
+string(n)→n
+Return mid(n,2,dim(n)-2)
+EndFunc

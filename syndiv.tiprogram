@@ -1,0 +1,12 @@
+Define LibPub syndiv(list,x)=
+Prgm
+©{list},x, does synthetic division
+Local index,nlist,t
+nlist:={list[1]}
+index:=1
+While index<dim(list)
+  index:=index+1
+  nlist[index]:=nlist[index-1]*x+list[index]
+EndWhile
+Disp nlist
+EndPrgm

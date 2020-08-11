@@ -1,0 +1,32 @@
+Define LibPub reimans()=
+Prgm
+© calculates average integrals
+Local answer,l,h,i,j,area,intgrl
+RequestStr "is function in f1?(y/n)",answer
+answer:=string(answer)
+If answer="y" or answer="Y" Then
+  Goto a
+ElseIf answer="n" or answer="N" Then
+ Disp "Enter it there first!"
+ Goto b
+EndIf
+Lbl a
+Request "Lower limit?",l
+Request "Upper limit?",h
+Request "No. of rectangles?",j
+i:=((h-l)/(j))
+area:=0
+intgrl:=0
+For g,l,h,i
+area:=area+abs(f1(g))*i
+intgrl:=intgrl+f1(g)*i
+EndFor
+intgrl:=prgms\dec(intgrl)
+Disp "Integral is "&string(intgrl)
+If abs(area-intgrl)< Then
+  Disp "Area is equal to the integral"
+ Else
+ Disp "Area is "&string((√(area))^(2))
+EndIf
+Lbl b
+EndPrgm

@@ -1,0 +1,13 @@
+Define LibPub digtsum(n)=
+Func
+©Returns sum of indidual integers
+Local fsum,str,i
+fsum:=0
+str:=string(n)
+i:=dim(str)
+While i≠0
+fsum:=fsum+expr(mid(str,i,1))
+i:=i-1
+EndWhile
+Return fsum
+EndFunc

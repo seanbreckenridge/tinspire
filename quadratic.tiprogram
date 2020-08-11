@@ -1,0 +1,16 @@
+Define LibPub quadratic(a,b,c)=
+Func
+© (ax^(2)+bx+c, enter a,b,c)
+Local d
+b^(2)-4*a*c→d
+If d>0 Then
+  Disp "Two Solutions"
+  Return [["−"&string(b)&"+sqrt("&string(b^(2))&"-"&string(d)&")/"&string(2*a),((−b+√(d))/(2*a))]["−"&string(b)&"-sqrt("&string(b^(2))&"-"&string(d)&")/"&string(2*a),((−b-√(d))/(2*a))]]
+  ElseIf d=0 Then
+  Disp "One Solution"
+  Return ((−b)/(2*a))
+ElseIf d<0 Then
+  Disp "No Solutions"
+  Return "−"&string(b)&"±sqrt("&string(d)&")/"&string(2*a)
+EndIf
+EndFunc

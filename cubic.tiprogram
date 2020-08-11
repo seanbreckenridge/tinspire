@@ -1,0 +1,40 @@
+Define LibPub cubic(a,b,c,d)=
+Prgm
+©(a,b,c,d) from cubic, returns 0's
+Local str,desc,test,zeroo
+test:=−150
+Lbl l
+While test≠150
+  If string(a*test^(3)+b*test^(2)+c*test+d)="undef" Then
+    test:=test+0.5
+    Goto l
+  EndIf
+  If a*test^(3)+b*test^(2)+c*test+d=0 Then
+    zeroo:=test
+    Goto f
+  Else
+    test:=test+0.5
+  EndIf
+EndWhile
+If test≥150 Then
+  Disp "Error - No zeros found!"
+  Goto b
+EndIf
+Lbl f
+b:=a*zeroo+b
+c:=b*zeroo+c
+desc:=b^(2)-4*a*c
+If desc>0 Then
+  Disp "3 solutions"
+  str:={((−b+√(desc))/(2*a)),((−b-√(desc))/(2*a)),zeroo}
+  Disp prgms\listtostring(str)
+ElseIf desc=0 Then
+Disp "2 solutions"
+ str:=string(zeroo)&","&string(((−b)/(2*a)))
+Disp str
+ElseIf desc<0 Then
+  Disp "1 solution"
+  Disp string(zeroo)
+EndIf
+Lbl b
+EndPrgm

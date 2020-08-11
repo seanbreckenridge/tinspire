@@ -1,0 +1,7 @@
+Define LibPub hero(a,b,c)=
+Func
+© Enter 3 sides of ∆, returns area
+Local s
+s:=((a+b+c)/(2))
+Return √(s*(s-a)*(s-b)*(s-c))
+EndFunc

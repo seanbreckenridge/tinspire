@@ -1,0 +1,30 @@
+Define LibPub guess()=
+Prgm
+© guessing game
+Local minm,maxm,num,win,inc,gues
+win:=0
+inc:=0
+Request "Minimum Number?",minm
+Request "Maximum Number?",maxm
+num:=0
+While num=0
+num:=randInt(minm,maxm)
+EndWhile
+While win≠1
+inc:=inc+1
+Request "Guess? (type 0 to quit)",gues
+If gues=0 Then
+  Stop
+  Goto f
+EndIf
+If num=gues Then
+=  Disp "You won in "&string(inc)&" guesses!"
+  win:=1
+ElseIf num>gues Then
+  Disp "Too Low..."
+ElseIf num<gues Then
+  Disp "Too High..."
+EndIf
+EndWhile
+Lbl f
+EndPrgm

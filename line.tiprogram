@@ -1,0 +1,32 @@
+Define LibPub line(choice)=
+Prgm
+©enter 0 for info
+Local a,b,c,d,x,m
+If choice=0 Then
+  Disp "1) 2 points -> equation"
+  Disp "2) slope, points -> equation"
+EndIf
+If choice=1 Then
+  Request "x1",a
+  Request "y1",b
+  Request "x2",c
+  Request "y2",d
+  m:=((c-a)/(d-b))
+  x:=b-m*a
+  If x≥0 Then
+    Disp "y="&string(m)&"x+"&string(x)
+  Else
+    Disp "y="&string(m)&"x-"&string(−1*x)
+  EndIf
+ ElseIf choice=2 Then
+   Request "slope",m
+   Request "x1",a
+   Request "y1",b
+   c:=b-m*a
+     If c≥0 Then
+         Disp "y="&string(m)&"x+"&string(c)
+           Else
+             Disp "y="&string(m)&"x-"&string(−1*c)
+               EndIf
+EndIf
+EndPrgm

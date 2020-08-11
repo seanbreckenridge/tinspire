@@ -1,0 +1,12 @@
+Define LibPub dec(n)=
+Func
+© converts to decimal
+If n<0 Then
+  n:=−1*n
+  n:=(√(n))^(2)
+  n:=n*−1
+ Else
+ n:=(√(n))^(2)
+EndIf
+Return n
+EndFunc
